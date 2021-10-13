@@ -2,7 +2,7 @@ import re
 word = "jemoeder"
 guess = list(len(word) * "*") 
 maximum = 10
-round = 0
+round = 2
 
 def check(value):
    if value == word:
