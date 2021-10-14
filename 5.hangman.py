@@ -36,6 +36,6 @@ while True:
          break
    else:
       print("1 or 2 is the only choice\n")
-
+   print(guess)
    print("Only ", maximum - round, " left")
 
