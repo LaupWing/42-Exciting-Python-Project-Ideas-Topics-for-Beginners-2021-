@@ -2,7 +2,7 @@ import re
 word = "jemoeder"
 guess = list(len(word) * "*") 
 maximum = 10
-round = 2
+round = 0
 
 def check(value):
    if value == word:
@@ -12,7 +12,7 @@ def check(value):
    return False
 
 while True:
-   print("Guess the word or guess the letter?\n")
+   print("Guess the word or guess the letter?")
    choice = input("(1): Letter (2): Word:\n")
    if choice == "1" or choice == "2":
       if choice == "1":
@@ -23,7 +23,8 @@ while True:
             indexes = [m.start() for m in re.finditer(letter, word)]
             for index in indexes:
                guess[index] = letter
-            print("".join(guess))
+            print('Your progress->')
+            print("".join(guess)+"\n")
             if check("".join(guess)):
                break
       else:
@@ -36,6 +37,6 @@ while True:
          break
    else:
       print("1 or 2 is the only choice\n")
-   print(guess)
+   # print(guess)
    print("Only ", maximum - round, " left")
 
