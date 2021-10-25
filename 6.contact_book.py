@@ -4,7 +4,9 @@ connection = sqlite3.connect("contact.db")
 
 cursor  = connection.cursor()
 
-command1 = """CREATE TABLE IF NOT EXISTS
-stores(contact_id INTEGER PRIMARY KEY, phonenumber INTEGER, name TEXT)"""
+cursor.execute("""CREATE TABLE IF NOT EXISTS
+contacts(phonenumber INTEGER, name TEXT)""")
+cursor.execute("INSERT INTO contacts VALUES ('0654754116','Loc Nguyen')")
 
-cursor.execute(command1)
+connection.commit()
+connection.close()
